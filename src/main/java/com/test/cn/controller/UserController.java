@@ -1,12 +1,15 @@
 package com.test.cn.controller;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
+import com.test.cn.bean.User;
+import com.test.cn.service.UserService;
+import com.test.cn.util.ResultBean;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -15,13 +18,18 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class UserController {
 
-	@RequestMapping("/put")
-	public String put() {
-		Map<String,String> map = new HashMap<String,String>();
-		map.put("A", "a");
-		map.put("B", "b");
-		map.put("C", "c");
-		log.info("UserController put response:{}",JSON.toJSONString(map));
-		return JSON.toJSONString(map);
+	@Autowired
+	private UserService userService;
+	
+	@RequestMapping("/queryUserList")
+	public List<User> queryUserList() {
+		List<User> userList = userService.queryUserList();
+//		log.info("UserController queryUser response:{}",JSON.toJSONString(userList));
+		return userList;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(System.currentTimeMillis());
 	}
 }
+

@@ -1,10 +1,11 @@
 package com.test.cn;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication
+@MapperScan("com.test.cn.mapper")
 public class TestApplication {
 
 	public static void main(String[] args) {
