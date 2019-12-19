@@ -90,4 +90,8 @@
       permission = #{permission,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="queryUserList" resultMap="BaseResultMap">
+  	select * from user where username = #{username}
+  </select>
 </mapper>

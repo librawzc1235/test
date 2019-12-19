@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
 import com.test.cn.entity.User;
 import com.test.cn.service.UserService;
+import com.test.cn.util.ResultBean;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -32,11 +34,12 @@ public class UserController {
 		log.info("UserController put response:{}",JSON.toJSONString(map));
 		return JSON.toJSONString(map);
 	}
-	
-	@RequestMapping("/getList")
-	public String getList(User user) {
-		List list = userService.pageList(user);
-		return JSON.toJSONString(list);
+
+	@RequestMapping("/queryUserList")
+	public List<User> queryUserList(@RequestBody User user) {
+		List<User> userList = userService.queryUserList(user);
+		log.info("UserController queryUser response:{}",JSON.toJSONString(userList));
+		return userList;
 	}
 	
 	public static void main(String[] args) {
@@ -47,3 +50,4 @@ public class UserController {
 	}
 	
 }
+

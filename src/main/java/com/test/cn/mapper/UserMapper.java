@@ -1,5 +1,9 @@
 package com.test.cn.mapper;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.test.cn.entity.User;
 
 public interface UserMapper {
@@ -9,9 +13,11 @@ public interface UserMapper {
 
     int insertSelective(User record);
 
-    User selectByPrimaryKey(Integer id);
+    User selectByPrimaryKey(@Param("id") Integer id);
 
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+	List<User> queryUserList(User user);
 }
