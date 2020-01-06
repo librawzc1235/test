@@ -15,7 +15,7 @@
 	    <!-- 按照每天生成日志文件 -->
 	    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 	        <!--日志文件输出的文件名-->
-	        <FileNamePattern>${LOG_HOME}.log.%d{yyyy-MM-dd}.log</FileNamePattern>
+	        <FileNamePattern>${LOG_HOME}.log.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
 	        <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
 	           <!-- 每个日志文件大小不超过5GB -->
 	           <maxFileSize>5000MB</maxFileSize>
