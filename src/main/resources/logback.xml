@@ -26,4 +26,5 @@
 	    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
 	        <pattern>%-20(%d{yyy-MM-dd HH:mm:ss.SSS} [%X{requestId}]) %-5level - %logger{80} - %msg%n</pattern>
 	    </encoder>
+	 </appender>   
 </configuration>
