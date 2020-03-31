@@ -47,7 +47,11 @@ public class UserController {
 		BigDecimal parm2 = null;
 		BigDecimal str = parm != null ? parm :parm2 != null ? parm2 : new BigDecimal("2");
 		System.out.println(str);
+		
+		String str3 = "000036";
+		System.out.println(Long.valueOf(str3));
 	}
+	
 	
 }
 
