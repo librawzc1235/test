@@ -16,6 +16,9 @@ public class IndexController {
 	
 	@RequestMapping("toPdf")
 	public void toPdf() {
+//		String source = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）.docx";
+//		String target = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）.pdf";
+		
 		String source = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）.docx";
 		String target = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）.pdf";
 		JacobUtils.word2pdf(source,target);

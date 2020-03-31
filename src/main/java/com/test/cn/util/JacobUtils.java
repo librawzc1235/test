@@ -13,7 +13,7 @@ public class JacobUtils {
 	
 	public static void word2pdf(String source, String target) {
 		long startTime = System.currentTimeMillis();
-        ComThread.InitSTA();
+//        ComThread.InitSTA();
         ActiveXComponent app = null; 
         try { 
             app = new ActiveXComponent("Word.Application"); 
@@ -32,7 +32,7 @@ public class JacobUtils {
             if (app != null) { 
                 app.invoke("Quit", 0); 
             } 
-            ComThread.Release();
+//            ComThread.Release();
             long endTime = System.currentTimeMillis();
             System.out.println("共用时："+(endTime-startTime)+"ms");
         } 
