@@ -13,7 +13,7 @@ public class JacobUtils {
 	
 	public static void word2pdf(String source, String target) {
 		long startTime = System.currentTimeMillis();
-//        ComThread.InitSTA();
+        ComThread.InitSTA();
         ActiveXComponent app = null; 
         try { 
             app = new ActiveXComponent("Word.Application"); 
@@ -32,7 +32,7 @@ public class JacobUtils {
             if (app != null) { 
                 app.invoke("Quit", 0); 
             } 
-//            ComThread.Release();
+            ComThread.Release();
             long endTime = System.currentTimeMillis();
             System.out.println("共用时："+(endTime-startTime)+"ms");
         } 
@@ -75,4 +75,9 @@ public class JacobUtils {
           //如果没有这句话,winword.exe进程将不会关闭  
            ComThread.Release();
     }
+    public static void main(String[] args) {
+    	String source = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）.docx";
+		String target = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）3.pdf";
+		word2pdf(source,target);
+	}
 }

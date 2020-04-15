@@ -113,13 +113,6 @@
 			<artifactId>jstl</artifactId>
 		</dependency>
 		
-		<!-- jsp编辑器 -->
-		<dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <version>9.0.33</version>
-        </dependency>
-        
         <dependency>
 		    <groupId>net.sf.jacob-project</groupId>
 		    <artifactId>jacob</artifactId>
@@ -132,13 +125,27 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 		
+		<dependency>
+            <groupId>com.spire.doc</groupId>
+            <artifactId>spire-doc</artifactId>
+            <version>1.0</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
+		<finalName>test</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

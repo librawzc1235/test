@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Word To PDF</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript" src="../../JS/jquery-1.8.3.min.js"></script>
+</head>
+
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+    文件：<input type="file" accept=".docx" name="file" id="file"/><br/>
+    <input type="button" id="jacob" value="转换"/>
+</form>
+</body>
+<script type="text/javascript">
+  $(function () {
+    $("#jacob").click(function () {
+      var formData = new FormData();
+      
+      formData.append("file",document.getElementById("file").files[0]);  
+      $.ajax({
+        url: "/jacob/wordToPdf",
+        type: "POST",
+        data: formData,
+         
+        //必须false才会自动加上正确的Content-Type
+        contentType: false,
+         
+        //必须false才会避开jquery对 formdata 的默认处理
+        //XMLHttpRequest会对 formdata 进行正确的处理
+        processData: false,
+         
+        success: function (data) {
+          if (data.status == "true") {
+            alert("上传成功！");
+          }
+          if (data.status == "error") {
+            alert(data.msg);
+          }
+        },
+        error: function () {
+          alert("上传失败,请检查上传文件!");
+        }
+      });
+    });
+  });
+  </script>
+</html>
