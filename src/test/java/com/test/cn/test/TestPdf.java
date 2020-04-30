@@ -20,4 +20,10 @@ public class TestPdf {
 		String target = "F:/word2Pdf/HD湘江·半岛核心璟享定向融资计划（线上版）4.pdf";
 		JacobUtils.word2pdf(source,target);
 	}
+	
+	public static void main(String[] args) {
+		Integer a = null;
+		System.out.println(String.valueOf(a));
+		System.out.println(a);
+	}
 }

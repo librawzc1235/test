@@ -10,4 +10,8 @@ public interface UserService {
 
 	List<User> queryUserList(User user);
 
+	List<User> getAllUser();
+
+	List<User> getAllUser2();
+
 }

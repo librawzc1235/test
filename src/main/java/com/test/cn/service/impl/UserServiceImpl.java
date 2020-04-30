@@ -24,9 +24,17 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
 	public List<User> queryUserList(User user) {
-		PageHelper.startPage(1, 10);
+//		PageHelper.startPage(0, 10);
 		List<User> list = userMapper.queryUserList(user);
 		return list;
+	}
+	@Override
+	public List<User> getAllUser() {
+		return userMapper.getAllUser();
+	}
+	@Override
+	public List<User> getAllUser2() {
+		return userMapper.getAllUser2();
 	}
 
 }

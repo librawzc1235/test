@@ -11,6 +11,12 @@
   <sql id="Base_Column_List">
     id, username, password, role, permission
   </sql>
+  <sql id="query_parm">
+  	<if test="username != null and username != ''">
+  	 	and username = #{username}
+  	</if>
+  </sql>
+  
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -92,6 +98,21 @@
   </update>
   
   <select id="queryUserList" resultMap="BaseResultMap">
-  	select * from user where username = #{username}
+  	select * from user 
+	<where>
+		1=1
+		<include refid="query_parm" />
+	</where>
+  </select>
+  <select id = "getAllUser" resultMap="BaseResultMap">
+  	select * from user 
+  </select>
+  
+  <select id = "getAllUser2" resultMap="BaseResultMap">
+  	select * from user where username = 'admin'
+  </select>
+  
+  <select id = "getAllUser_COUNT" resultType="java.util.Map">
+  	select count(0),username from user where username = 'admin1'
   </select>
 </mapper>
