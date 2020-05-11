@@ -16,4 +16,10 @@
     <include refid="Base_Column_List" />
     from user
   </select>
+  
+  <select id="getPageList2" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+  </select>
 </mapper>

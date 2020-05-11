@@ -9,4 +9,5 @@ import com.test.cn.test.entity.User;
 @Mapper
 public interface UserMapper {
 	List<User> getPageList();
+	List<User> getPageList2();
 }

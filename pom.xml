@@ -90,8 +90,23 @@
 		<dependency>
 		    <groupId>com.github.pagehelper</groupId>
 		    <artifactId>pagehelper-spring-boot-starter</artifactId>
-		    <version>1.2.5</version>
+		    <version>1.2.9</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.jsoup</groupId>
+		    <artifactId>jsoup</artifactId>
+		    <version>1.11.3</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.aspose/aspose-words -->
+		<dependency>
+            <groupId>aspose-words</groupId>
+            <artifactId>aspose-words</artifactId>
+            <version>16.8.0.jdk16</version>
+            <classifier>jdk16</classifier>
+        </dependency> 
+		
 	</dependencies>
 
 	<build>
