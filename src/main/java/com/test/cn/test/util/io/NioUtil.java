@@ -2,8 +2,13 @@ package com.test.cn.test.util.io;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Files;
@@ -41,6 +46,7 @@ public class NioUtil {
 			}
 		}
 	}
+	
 	
 	public static void main(String[] args) throws IOException {
 		
